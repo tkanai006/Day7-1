@@ -1,0 +1,25 @@
+<%= form_with(model: @whisper, local: true) do |form| %>
+    <!-- エラーが存在している時だけ（@blogの中にエラー情報が詰め込まれている時だけ）-->
+    <!-- 内部の記述を実行する -->
+    <% if @whisper.errors.any? %>
+      <div id="error_explanation">
+        <!-- バリデーションエラーの件数表示 -->
+        <h2><%= @whisper.errors.count %>件のエラーがあります。</h2>
+        <ul>
+  
+        <!-- full_messageで複数のエラーを表示 -->
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="tweet_content">
+      <%= form.label :ツイート内容 %>
+      <%= form.text_field :content %>
+    </div>
+    <%= form.submit %>
+  <% end %>
+  
+  <%= link_to "ツイート一覧画面にもどる", whispers_path %>
