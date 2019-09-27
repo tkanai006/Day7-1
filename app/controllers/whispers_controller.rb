@@ -9,11 +9,11 @@ class WhispersController < ApplicationController
     end
 
     def create
-        @blog = Whisper.new(whisper_params)
+        @whisper = Whisper.new(whisper_params)
         if params[:back]
             render 'new'
         else
-            if @blog.save
+            if @whisper.save
                 # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
                 redirect_to new_whisper_path, notice: "ブログを作成しました！"
             else
@@ -32,10 +32,14 @@ class WhispersController < ApplicationController
     def update
     end
 
-    def destory
+    def destroy
+        @whisper.destroy
+        redirect_to whispers_path, notice: "ツイートを削除しました！"
     end
 
     def confirm
+        @whisper = Whisper.new(whisper_params)
+        render :new if @whisper.invalid?
     end
 
     private

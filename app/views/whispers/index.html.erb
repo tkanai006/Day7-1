@@ -3,22 +3,23 @@
 
 <p><%= notice %></p>
 
+<%= link_to '新しくブログを投稿する', new_whisper_path %>
+
 <table>
     <tr>
         <th>id</th>
         <th>ツイート内容</th>
-        <th>作成年月日</th>
         <th>更新年月日</th>
     </tr>
 
 <!-- @whispersは、each文を使って個別に取る形になる -->
 <% @whispers.each do |whisper| %>
+    <% updated_at = whisper.updated_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
     <tr>
         <td><%= whisper.id %></td>
         <td><%= whisper.content %></td>
-        <td><%= whisper.created_at %></td>
-        <td><%= whisper.updated_at %></td>
+        <td><%= updated_at %></td>
+        <td><%= link_to 'ツイートを削除する', whisper_path(whisper.id), method: :delete, data: {confirm: '本当に削除してもいいですか？'} %></td>
     </tr>
 <% end %>
 </table>
-<%= link_to '新しくブログを投稿する', new_whisper_path %>

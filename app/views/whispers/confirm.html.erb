@@ -1,0 +1,12 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @whisper,url: whiçpers_path, local: true) do |form| %>
+    <%= form.hidden_field :id %>
+    <%= form.hidden_field :content %>
+
+    <p>id:<%= @whisper.id %></p>
+    <p>ツイート内容:<%= @whisper.content %></p>
+    <%= form.submit "登録する" %>
+
+    <%= form.submit "戻る", name: 'back' %>
+<% end %>
