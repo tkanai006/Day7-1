@@ -8,6 +8,7 @@
         <th>id</th>
         <th>ツイート内容</th>
         <th>作成年月日</th>
+        <th>更新年月日</th>
     </tr>
 
 <!-- @whispersは、each文を使って個別に取る形になる -->
@@ -16,6 +17,7 @@
         <td><%= whisper.id %></td>
         <td><%= whisper.content %></td>
         <td><%= whisper.created_at %></td>
+        <td><%= whisper.updated_at %></td>
     </tr>
 <% end %>
 </table>

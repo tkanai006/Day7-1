@@ -1,7 +1,7 @@
 class WhispersController < ApplicationController
     before_action :set_whisper, only:[:show, :edit, :update, :destroy]
     def index
-        @whispers = Whisper.all
+        @whispers = Whisper.order(updated_at: :desc)
     end
 
     def new
