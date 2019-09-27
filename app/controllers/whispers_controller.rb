@@ -14,10 +14,8 @@ class WhispersController < ApplicationController
             render 'new'
         else
             if @whisper.save
-                # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-                redirect_to new_whisper_path, notice: "ブログを作成しました！"
+                redirect_to new_whisper_path, notice: "ツイートを投稿しました。"
             else
-                # 入力フォームを再描画します。
                 render 'new'
             end
         end
@@ -30,11 +28,16 @@ class WhispersController < ApplicationController
     end
 
     def update
+        if @whisper.update(whisper_params)
+            redirect_to whispers_path, notice: "ツイートを編集しました。"
+          else
+            render :edit
+          end
     end
 
     def destroy
         @whisper.destroy
-        redirect_to whispers_path, notice: "ツイートを削除しました！"
+        redirect_to whispers_path, notice: "ツイートを削除しました。"
     end
 
     def confirm

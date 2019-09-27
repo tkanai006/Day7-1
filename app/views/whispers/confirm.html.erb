@@ -1,12 +1,11 @@
-<h3>以下の内容で、送信する。</h3>
+<%= word = action_name == 'new'|| action_name == 'confirm' || action_name == 'create' ? "投稿" : "更新" %>
+<h3>以下の内容で、投稿する。</h3>
 
-<%= form_with(model: @whisper,url: whiçpers_path, local: true) do |form| %>
-    <%= form.hidden_field :id %>
+<%= form_with(model: @whisper,url: whispers_path, local: true) do |form| %>
     <%= form.hidden_field :content %>
 
-    <p>id:<%= @whisper.id %></p>
     <p>ツイート内容:<%= @whisper.content %></p>
-    <%= form.submit "登録する" %>
+    <%= form.submit "登録する", name: 'index' %>
 
     <%= form.submit "戻る", name: 'back' %>
 <% end %>

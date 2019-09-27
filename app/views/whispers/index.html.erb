@@ -19,6 +19,7 @@
         <td><%= whisper.id %></td>
         <td><%= whisper.content %></td>
         <td><%= updated_at %></td>
+        <td><%= link_to 'ツイートを編集する', edit_whisper_path(whisper.id) %></td>
         <td><%= link_to 'ツイートを削除する', whisper_path(whisper.id), method: :delete, data: {confirm: '本当に削除してもいいですか？'} %></td>
     </tr>
 <% end %>
