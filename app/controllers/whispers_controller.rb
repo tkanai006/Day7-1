@@ -2,6 +2,7 @@ class WhispersController < ApplicationController
     before_action :set_whisper, only:[:show, :edit, :update, :destroy]
     def index
         @whispers = Whisper.order(updated_at: :desc)
+        @tweet_count = Whisper.count
     end
 
     def new
