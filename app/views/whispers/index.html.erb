@@ -39,12 +39,12 @@
                 <td class="main_tbl_total">
                     <span>
                         <strong class="main_t_name">金井　崇 @tkanai001　　　</strong>
-                        <em class="main_t_upd"><%= updated_at %></em>
+                        <em class="main_tbl_upd">・<%= updated_at %></em>
                     </span>
-                    <div class="main_t_content"><%= whisper.content %></div>
+                    <div class="main_tbl_content"><%= whisper.content %></div>
                     <div>
                         <span>　</span>
-                        <%= link_to edit_whisper_path(whisper.id) ,class: "main_t_edit" do%>
+                        <%= link_to edit_whisper_path(whisper.id) ,class: "main_tbl_edit" do%>
                             <%= image_tag 'edit.png', size:'20x20' %>
                         <% end %>
                         <span>　</span>

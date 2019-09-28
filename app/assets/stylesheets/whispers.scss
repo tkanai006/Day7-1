@@ -30,7 +30,7 @@ header{
     width:  100px;   
     padding:  1px;   
     font-size:  15px;
-    border-radius:  10px; /* 角丸指定 */
+    border-radius:  15px; /* 角丸指定 */
 }
 
 body{
@@ -80,15 +80,20 @@ body{
 
 .main_tbl_total{
     color: #b6b6b6;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-.main_t_content{
+.main_tbl_upd{
+    color: #818181;
+    font-size: 12px;
+}
+
+.main_tbl_content{
     color: #d1d1d1;
     font-size: 16px;
 }
 
-.main_t_edit{
+.main_tbl_edit{
     text-decoration: none;
 }
 
