@@ -4,30 +4,34 @@
         <span><%= image_tag 'twitter_clone.png', size:'150x38' %></span>
     </header>
     <body>
-    <%= form_with(model: @whisper, local: true,url: choose_new_or_edit) do |form| %>
-    <!-- エラーが存在している時だけ（@whisperの中にエラー情報が詰め込まれている時だけ）-->
-    <!-- 内部の記述を実行する -->
-    <% if @whisper.errors.any? %>
-      <div id="error_explanation">
-        <!-- バリデーションエラーの件数表示 -->
-        <h2><%= @whisper.errors.count %>件のエラーがあります。</h2>
-        <ul>
-  
-        <!-- full_messageで複数のエラーを表示 -->
-        <% @whisper.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <%= form_with(model: @whisper, local: true,url: choose_new_or_edit) do |form| %>
+        <!-- エラーが存在している時だけ（@whisperの中にエラー情報が詰め込まれている時だけ）-->
+        <!-- 内部の記述を実行する -->
+        <% if @whisper.errors.any? %>
+            <div id="error_explanation">
+                <!-- バリデーションエラーの件数表示 -->
+                <h2><%= @whisper.errors.count %>件のエラーがあります。</h2>
+                <ul>
+                    <!-- full_messageで複数のエラーを表示 -->
+                    <% @whisper.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
   
-    <div class="tweet_content">
-      <%= form.label :ツイート内容 %>
-      <%= form.text_field :content %>
-    </div>
-    <%= form.submit %>
-  <% end %>
-  
-  <%= link_to "ツイート一覧画面にもどる", whispers_path %>
-  </body>
+        <div class="tweet_content">
+            <%= form.label :ツイート内容 %>
+            <%= form.text_area :content,size: "100x3" %>
+        </div>
+        <%= form.submit %>
+        <% end %>
+        <%= link_to "ツイート一覧画面にもどる", whispers_path %>
+    </body>
+    <footer>
+        <div class="footer-word">
+            <p>2019年9月オンライン受講生 課題</p>
+        </div>
+        <p>© 2015-2019 Copyright DIVE INTO CODE Corp.</p>
+    </footer>
 </html>

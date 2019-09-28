@@ -33,12 +33,12 @@
             <% @whispers.each do |whisper| %>
             <% updated_at = whisper.updated_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
             <tr>
-                <td>
+                <td class="main_tbl_icon">
                     <%= image_tag 'profile_icon.png', size:'80x80' %>
                 </td>
                 <td class="main_tbl_total">
                     <span>
-                        <strong class="main_t_name">金井　崇 @tkanai001　　　</strong>
+                        <strong class="main_tbl_name">金井　崇 @tkanai001　　　</strong>
                         <em class="main_tbl_upd">・<%= updated_at %></em>
                     </span>
                     <div class="main_tbl_content"><%= whisper.content %></div>

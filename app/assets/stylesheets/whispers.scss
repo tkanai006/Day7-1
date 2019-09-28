@@ -68,14 +68,18 @@ body{
     margin-left: 10px;
     margin-bottom: 60px;
     width: 750px;
-    /*border: dashed rgb(202, 145, 145);*/
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .main_table tr{
     border: solid;
     border-width: thin;
     border-color: rgb(138, 138, 138);
-    border-collapse: collapse;
+}
+
+.main_tbl_icon{
+    width: 90px;
 }
 
 .main_tbl_total{
@@ -91,6 +95,7 @@ body{
 .main_tbl_content{
     color: #d1d1d1;
     font-size: 16px;
+    word-wrap: break-word;
 }
 
 .main_tbl_edit{
