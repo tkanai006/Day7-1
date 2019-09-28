@@ -1,3 +1,120 @@
-// Place all the styles related to the whispers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+header{
+    background-color: #3b4764;
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%;
+}
+
+.notice{
+    color: #d1d1d1;
+    text-align: center;
+}
+
+.hearder-right{
+    float: right;
+    padding-right: 1rem;
+    margin: 0.5rem;
+}
+
+.tweet_button{
+    text-align:  center;
+    color:  #fff;
+    background-color: #36a5d1;
+    display:  block; 
+    width:  100px;   
+    padding:  1px;   
+    font-size:  15px;
+    border-radius:  10px; /* 角丸指定 */
+}
+
+body{
+    background-color: #000000; 
+    margin-top: 50px;
+}
+
+.profile_table{
+    float: left;
+    width: 250px;
+}
+
+.profile_tr{
+    background: image-url('profile_back.jpg');
+    background-size: 100%;
+}
+
+.profile_tr_buttom{
+    color: #d1d1d1;
+    background-color: #222121; 
+}
+
+.profile_td_tweet_count{
+    font-weight: 800;
+}
+
+.main_table{
+    border: solid;
+    border-width: thin;
+    border-color:rgb(138, 138, 138);
+    border-collapse: collapse;
+    background-color: rgb(29, 35, 39);
+    color: #fffff;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 60px;
+    width: 750px;
+    /*border: dashed rgb(202, 145, 145);*/
+}
+
+.main_table tr{
+    border: solid;
+    border-width: thin;
+    border-color: rgb(138, 138, 138);
+    border-collapse: collapse;
+}
+
+.main_tbl_total{
+    color: #b6b6b6;
+    font-size: 13px;
+}
+
+.main_t_content{
+    color: #d1d1d1;
+    font-size: 16px;
+}
+
+.main_t_edit{
+    text-decoration: none;
+}
+
+footer{
+    /* footer部分の実装 */
+    background-color: #3b4764;
+    height: 50px;
+    position: fixed; /* ヘッダーを固定する */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+    
+footer .footer-word p{
+    margin: 0 auto;
+    margin-top: 10px;
+}
+    
+footer p{
+    color: rgb(179, 179, 179);
+    font-size: 0.5rem;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}

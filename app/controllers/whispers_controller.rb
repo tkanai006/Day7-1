@@ -1,5 +1,5 @@
 class WhispersController < ApplicationController
-    before_action :set_whisper, only:[:show, :edit, :update, :destroy]
+    before_action :set_whisper, only:[:edit, :update, :destroy]
     def index
         @whispers = Whisper.order(updated_at: :desc)
         @tweet_count = Whisper.count
@@ -17,12 +17,9 @@ class WhispersController < ApplicationController
             if @whisper.save
                 redirect_to new_whisper_path, notice: "ツイートを投稿しました。"
             else
-                render 'new'
+                render 'new' if @contact.invalid?
             end
         end
-    end
-
-    def show
     end
 
     def edit

@@ -1,5 +1,5 @@
 <%= form_with(model: @whisper, local: true,url: choose_new_or_edit) do |form| %>
-    <!-- エラーが存在している時だけ（@blogの中にエラー情報が詰め込まれている時だけ）-->
+    <!-- エラーが存在している時だけ（@whisperの中にエラー情報が詰め込まれている時だけ）-->
     <!-- 内部の記述を実行する -->
     <% if @whisper.errors.any? %>
       <div id="error_explanation">
