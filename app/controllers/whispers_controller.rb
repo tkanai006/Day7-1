@@ -25,6 +25,9 @@ class WhispersController < ApplicationController
     def edit
     end
 
+    def show
+    end
+
     def update
         if @whisper.update(whisper_params)
             redirect_to whispers_path, notice: "ツイートを編集しました。"

@@ -1,4 +1,10 @@
-<%= form_with(model: @whisper, local: true,url: choose_new_or_edit) do |form| %>
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <span><%= image_tag 'twitter_clone.png', size:'150x38' %></span>
+    </header>
+    <body>
+    <%= form_with(model: @whisper, local: true,url: choose_new_or_edit) do |form| %>
     <!-- エラーが存在している時だけ（@whisperの中にエラー情報が詰め込まれている時だけ）-->
     <!-- 内部の記述を実行する -->
     <% if @whisper.errors.any? %>
@@ -23,3 +29,5 @@
   <% end %>
   
   <%= link_to "ツイート一覧画面にもどる", whispers_path %>
+  </body>
+</html>

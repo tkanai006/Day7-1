@@ -1,10 +1,27 @@
-<h3>以下の内容で、投稿する。</h3>
-
-<%= form_with(model: @whisper,url: whispers_path, local: true) do |form| %>
-    <%= form.hidden_field :content %>
-
-    <p>ツイート内容:<%= @whisper.content %></p>
-    <%= form.submit "登録する", name: 'index' %>
-
-    <%= form.submit "戻る", name: 'back' %>
-<% end %>
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <span><%= image_tag 'twitter_clone.png', size:'150x38' %></span>
+    </header>
+    <body>
+        <table class="confirm_tbl_content">
+            <tr>
+                <td><em><strong>以下の内容で、投稿します。よろしいですか？</strong></em></td>
+            </tr>
+            <tr>
+                <%= form_with(model: @whisper,url: whispers_path, local: true) do |form| %>
+                <%= form.hidden_field :content %>
+                <td>ツイート内容：<%= @whisper.content %></td>
+            </tr>
+        </table>
+        <%= form.submit "投稿する", name: 'index' %>
+        <%= form.submit "戻る", name: 'back' %>
+        <% end %>
+    </body>
+    <footer>
+    <div class="footer-word">
+        <p>2019年9月オンライン受講生 課題</p>
+    </div>
+    <p>© 2015-2019 Copyright DIVE INTO CODE Corp.</p>
+</footer>
+</html>

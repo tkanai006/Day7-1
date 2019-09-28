@@ -1,0 +1,53 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+header{
+    background-color: #3b4764;
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%;
+}
+
+body{
+    background-color: #000000; 
+    margin-top: 50px;
+}
+
+.confirm_tbl_content{
+    color: #d1d1d1;
+    border: solid;
+    border-width: thin;
+    border-color:rgb(138, 138, 138);
+    border-collapse: collapse;
+    background-color: rgb(29, 35, 39);
+}
+
+footer{
+    /* footer部分の実装 */
+    background-color: #3b4764;
+    height: 50px;
+    position: fixed; /* ヘッダーを固定する */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+    
+footer .footer-word p{
+    margin: 0 auto;
+    margin-top: 10px;
+}
+    
+footer p{
+    color: rgb(179, 179, 179);
+    font-size: 0.5rem;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
