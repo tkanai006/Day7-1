@@ -10,23 +10,23 @@
         <% if @whisper.errors.any? %>
             <div id="error_explanation">
                 <!-- バリデーションエラーの件数表示 -->
-                <h2><%= @whisper.errors.count %>件のエラーがあります。</h2>
+                <h2 class="error_msg"><%= @whisper.errors.count %>件のエラーがあります。</h2>
                 <ul>
                     <!-- full_messageで複数のエラーを表示 -->
                     <% @whisper.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
+                        <li class="error_msg"><%= msg %></li>
                     <% end %>
                 </ul>
             </div>
         <% end %>
   
         <div class="tweet_content">
-            <%= form.label :ツイート内容 %>
+            <span class="tweet_content_label"><%= form.label :ツイート内容 %></span>
             <%= form.text_area :content,size: "100x3" %>
         </div>
-        <%= form.submit %>
+        <%= form.submit "投稿へ"%>
         <% end %>
-        <%= link_to "ツイート一覧画面にもどる", whispers_path %>
+        <p><%= link_to "ツイート一覧画面にもどる", whispers_path, class: "main_return_link" %></p>
     </body>
     <footer>
         <div class="footer-word">

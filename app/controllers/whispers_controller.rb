@@ -31,9 +31,9 @@ class WhispersController < ApplicationController
     def update
         if @whisper.update(whisper_params)
             redirect_to whispers_path, notice: "ツイートを編集しました。"
-          else
-            render :edit
-          end
+        else
+           render :edit
+        end
     end
 
     def destroy

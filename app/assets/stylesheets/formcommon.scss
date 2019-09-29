@@ -5,9 +5,9 @@ html{
 
 header{
     background-color: #3b4764;
-    position: fixed; /* ヘッダーを固定する */
-    top: 0; /* 上部から配置の基準位置を決める */
-    left: 0; /* 左から配置の基準位置を決める */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -16,11 +16,33 @@ body{
     margin-top: 50px;
 }
 
+.error_msg{
+    color: #d1d1d1;
+}
+
+.tweet_content{
+    color: #d1d1d1;
+    border: solid;
+    border-width: thin;
+    border-color:rgb(138, 138, 138);
+    border-collapse: collapse;
+    background-color: rgb(29, 35, 39);
+    width: 650px;
+    
+}
+
+.tweet_content_label{
+    vertical-align: top;
+}
+
+.main_return_link{
+    color: #d1d1d1;
+}
+
 footer{
-    /* footer部分の実装 */
     background-color: #3b4764;
     height: 50px;
-    position: fixed; /* ヘッダーを固定する */
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
